@@ -57,6 +57,7 @@ header nav ul li a
     font-size: 1rem;
 }
 /*  */
+
 header, nav
 {
     display: block;
@@ -71,151 +72,46 @@ header, nav
     display:flex;
 
 }
-/* Estilos al formulario, se divide en tabla */
-.main-buscar form
-{
-    flex-grow: 1;
-    display: grid;
-    grid-template-columns: repeat(2,1fr) .5fr;
-    grid-template-rows: 64px 85px;
-    place-items: center;
-}
-.main-buscar form label,input,button
-{
-    display: block;
-}
-/* Posicion del label */
-.main-buscar form label
-{
-    place-self: end start;
-    margin-left: 1em;
-}
-/* Ubicacion de los objetos del formulario en la celda que se le asigna */
-.main-buscar form label:nth-of-type(1)
-{
-    grid-column: 1;
-    grid-row: 1;  
-}
-.main-buscar form label:nth-of-type(2)
-{
-    grid-column: 2;
-    grid-row: 1; 
+
+
+/* Cards*/
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
     
 }
-.main-buscar form input[type="text"]
-{
-    grid-column: 1/1;
-    grid-row: 2/2;
+
+.container .card{
+    width: 250px;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    background-color:moccasin;
+    font-family: sans-serif;
 }
 
-.main-buscar form select
-{
-    grid-column: 2/2;
-    grid-row: 2/2;
-    /* Reemplaza la flecha hacia abajo por una personalizada */
-    appearance: none;
-    background-image: url('../images/flecha.png'),
-    linear-gradient(to bottom, #ffffff 0%,#f7f7f7 100%);
-    background-repeat: no-repeat, repeat;
-    background-position: right 2em top 50%, 0 0;
-    background-size: 1em auto, 100%;
+.container .card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
-/* Estilos al input de busquedad y selector */
-.main-buscar form input[type="text"],select
-{
-    place-self: start;
-    margin:12px 0px 0px 1em;
-    width: 90%;
-    height: 3em;
-    border-radius: 50px;
-    border:2px solid tomato;
-    padding-left: 2em;
-    padding-right: 2em;
+
+.container .card h4{
+    font-weight: 600;
 }
-.main-buscar form input[type="submit"]
-{
-    grid-column: 3/3;
-    grid-row: 1/ span 2;
-    place-self: center start;
-    margin: 27px 1em 0px 1em;
-    width: 15em;
-    height: 3em;
-    border: none;
-    border-radius: 50px;
-    background-color:tomato;
-    color: white;
-}
-/* Quitar el borde al interactuar con los elementos y añade sombra */
-.main-buscar form input[type="text"]:focus,input[type="text"]:hover,select:hover,select:focus,input[type="submit"]:focus,input[type="submit"]:hover
-{
-    outline: none;
-    box-shadow: 0 0 10px rgb(252, 85, 55);
-}
-.top-box
-{
-    margin:80px 2rem;
-    border:2px solid black;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-}
-.top-box h2
-{
-    align-self: center;
-    margin-top: 1em;
-}
-.articulo
-{
-    display:flex;
-    justify-content: center;
-}
-.box
-{
-    margin:2em 0px 0px 1em ;
-    position: relative;
-    overflow: hidden;
-    height: 50vh;
-    width: 25vw;
-    cursor: pointer;
-}
-.box img
-{
-    height: 100%;
-    width: 100%;
-    transition: all 500ms ease-out;
-}
-.hover
-{
-    position:absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(255, 154, 136, 0.6);
-    opacity: 0;
-    transition: all 500ms ease-out;
-    visibility: hidden;
-    text-align: center;
-}
-.box:hover > .hover
-{
-    opacity: 1;
-    visibility: visible;
-}
-.box:hover > .hover h3
-{
-    margin-top: 50%;
-    transition: all 500ms ease-out;
-}
-.box:hover > img
-{
-    transform: scale(1.3);
-}
-.box a
-{
-    position:absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
+
+.container .card p{
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+    
 }
