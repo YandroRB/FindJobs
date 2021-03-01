@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from apps.persona.views import index,RegistroUser,buscar,oferta,LoginUser,LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('registro/',RegistroUser.as_view(),name='registro'),
+    path('',LoginUser.as_view(),name='login'),
+    path('logout/',LogoutView.as_view(next_page='login'),name='logout'),
+    path('inicio/',index,name='index'),
+    path('buscador/',buscar,name='buscador'),
+    path('oferta/',oferta,name='oferta'),
+
 ]

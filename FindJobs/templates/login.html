@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang ="en">
+<html lang ="es">
 <head>
     <meta charset= "UTF-8">
     <meta name ="viewport" content="width=device-with,  initial-scale=1-0">
@@ -7,9 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,
     100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,
     900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/estilos.css">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/estilos.css' %}">
 </head>
 <body>
+
     <main>
             <div class="contenedor__todo">
 
@@ -29,30 +31,29 @@
         <!--Formulario de Login y Registro-->
                 <div class="contenedor__Login--register">
                     <!--Login-->
-                    <form action="" class="formulario__login">
-
+                    <form method="post" class="formulario__login">
+                    {% csrf_token %}
                         <h2>Iniciar Sesión</h2>
-                        <input type ="text" placeholder= "Correo Electronico">
-                        <input type ="password" placeholder= "Contraseña">
-                        <button>Entrar</button>
+                        {{form.username}}
+                        {{form.password}}
+                        <button type="submit">Entrar</button>
 
                     </form>
                     <!--Registro-->
-                    <form action="" class="formulario__register">
-
+                    <form method="post" class="formulario__register">
+                    {% csrf_token %}
                         <h2>Registrate como candidato en Workday</h2>
-                        <input type ="text" placeholder= "Nombres">
-                        <input type ="text" placeholder= "Apellidos">
-                        <input type ="text" placeholder= "Correo Electronico">
-                        <input type ="password" placeholder= "Contraseña">
-                        <input type ="password" placeholder= "Confirmar Contraseña">
-                        <button>Registrate</button>
-
+                        <input type ="text" placeholder= "Nombre de usuario" name="username">
+                        <input type ="text" placeholder= "Nombres" name="first_name">
+                        <input type ="text" placeholder= "Apellidos" name="last_name">
+                        <input type ="text" placeholder= "Correo Electronico" name="email">
+                        <input type ="password" placeholder= "Contraseña" name="password1">
+                        <input type ="password" placeholder= "Confirmar Contraseña" name="password2">
+                        <button type="submit">Registrate</button>
                     </form>
-
                 </div>
             </div>
     </main>
-    <script src="/js/script.js"></script>
+    <script src="{% static '/js/script.js' %}"></script>
 </body>
 </html>

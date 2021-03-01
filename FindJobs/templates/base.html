@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio Buscar Trabajo</title>
+    <!-- Estilos -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/index.css' %}">
+    <!-- Fuentes de google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="head">
+        <nav class="main-nav">
+            <a class=".main-imagen" href="{% url 'index' %}"><img src="{% static '/img/trabajo-en-equipo.png' %}" alt="Error"></a>
+            <ul class="main-menu">
+                <li class="main-option">
+                    <a href="{% url 'buscador' %}">Buscar trabajo</a>
+                </li>
+                <li class="main-option">
+                    <a href="">Consejos</a>
+                </li>
+                <li class="main-option">
+                    <a href="{% url 'index' %}">@{{ user.username }}</a>
+                </li>
+                <li class="main-option">
+                    <a href="{% url 'logout' %}">Cerrar sesion</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main">
+    {% block contenido %}
+
+    {% endblock %}
+    </div>
+</body>
+</html>

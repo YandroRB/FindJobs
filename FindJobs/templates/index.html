@@ -1,38 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio Buscar Trabajo</title>
-    <!-- Estilos -->
-    <link rel="stylesheet" href="../css/index.css">
-    <!-- Fuentes de google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="head">
-        <nav class="main-nav">
-            <a class=".main-imagen" href="index.html"><img src="../images/trabajo-en-equipo.png" alt="Error"></a>
-            <ul class="main-menu">
-                <li class="main-option">
-                    <a href="buscador.html">Buscar trabajo</a>
-                </li>
-                <li class="main-option">
-                    <a href="">Consejos</a>
-                </li>
-                <li class="main-option">
-                    <a href="">Iniciar Sesion</a>
-                </li>
-                <li class="main-option">
-                    <a href="">Registrarse</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="main">
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
         <div class="main-buscar">
             <form  action="">
                 <label for="buscar-empleo">Buscar oferta de: </label>
@@ -54,23 +22,23 @@
             <div class="articulo">
                 <div class="box">
                     <a href=""></a>
-                    <img src="../recursos/img/ciudad (1).jpg" alt="">
+                    <img src="{% static '/img/ciudad (1).jpg' %}" alt="">
                     <div class="hover"> 
                         <h3>Quito</h3> 
                     </div>
                 </div>
                 <div class="box">
                     <a href=""></a>
-                    <img src="../recursos/img/ciudad (2).jpg" alt="">
+                    <img src="{% static '/img/ciudad (2).jpg' %}" alt="">
                     <div class="hover"> 
-                        <h3>Cuenca</h3> 
+                        <h3>Quito</h3> 
                     </div>
                 </div>
                 <div class="box">
                     <a href=""></a>
-                    <img src="../recursos/img/ciudad (3).jpg" alt="">
+                    <img src="{% static '/img/ciudad (3).jpg' %}" alt="">
                     <div class="hover"> 
-                        <h3>Guayaquil</h3> 
+                        <h3>Quito</h3> 
                     </div>
                 </div>
             </div>
@@ -80,27 +48,25 @@
             <div class="articulo">
                 <div class="box">
                     <a href=""></a>
-                    <img src="../recursos/img/ciudad (1).jpg" alt="">
+                    <img src="{% static '/img/ciudad (1).jpg' %}" alt="">
                     <div class="hover"> 
-                        <h3>Quito</h3> 
+                        <h3>Empresa A</h3> 
                     </div>
                 </div>
                 <div class="box">
                     <a href=""></a>
-                    <img src="../recursos/img/ciudad (2).jpg" alt="">
+                    <img src="{% static '/img/ciudad (2).jpg' %}" alt="">
                     <div class="hover"> 
-                        <h3>Quito</h3> 
+                        <h3>Empresa B</h3> 
                     </div>
                 </div>
                 <div class="box">
                     <a href=""></a>
-                    <img src="../recursos/img/ciudad (3).jpg" alt="">
+                    <img src="{% static '/img/ciudad (3).jpg' %}" alt="">
                     <div class="hover"> 
-                        <h3>Quito</h3> 
+                        <h3>Empresa C</h3> 
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
-</html>
+{% endblock %}
