@@ -7,7 +7,9 @@
     <title>Inicio Buscar Trabajo</title>
     <!-- Estilos -->
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static '/css/index.css' %}">
+    {% block estilos %}
+    
+    {% endblock %}
     <!-- Fuentes de google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -21,7 +23,7 @@
                     <a href="{% url 'buscador' %}">Buscar trabajo</a>
                 </li>
                 <li class="main-option">
-                    <a href="">Consejos</a>
+                    <a href="">Crear trabajo</a>
                 </li>
                 <li class="main-option">
                     <a href="{% url 'index' %}">@{{ user.username }}</a>

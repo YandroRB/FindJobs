@@ -11,14 +11,11 @@ from django.shortcuts import redirect
 
 
 # Create your views here.
-def index(request):
-    return render(request,'index.html')
 
-def buscar(request):
-    return render(request,'buscador.html')
     
 def oferta(request):
     return render(request,'oferta.html')
+
 class RegistroUser(CreateView):
     model = User
     template_name = "login.html"

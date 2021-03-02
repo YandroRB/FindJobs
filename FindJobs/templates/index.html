@@ -1,20 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block estilos %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/index.css' %}">
+{% endblock %}
 {% block contenido %}
         <div class="main-buscar">
-            <form  action="">
+            <form  method="get">
                 <label for="buscar-empleo">Buscar oferta de: </label>
                 <input type="text" name="buscar-empleo">
                 <label  for="buscar-ciudad">en</label>
                 <select name="buscar-ciudad">
-                    <option value="0" selected>Escoja una ciudad</option>
-                    <option value="1">Quito</option>
-                    <option value="2">Guayaquil</option>
-                    <option value="3">Quevedo</option>
-                    <option value="4">Ambato</option>
-                    <option value="5">Cuenca</option>
+                    <option value="" selected>Escoja una ciudad</option>
+                    <option value="Quito">Quito</option>
+                    <option value="Guayaquil">Guayaquil</option>
+                    <option value="Quevedo">Quevedo</option>
+                    <option value="Ambato">Ambato</option>
+                    <option value="Cuenca">Cuenca</option>
                 </select>
-                <input  type="submit" name="buscar" value="Buscar">
+                <input  type="submit" value="Buscar">
             </form>
         </div>
         <div class="top-box">
